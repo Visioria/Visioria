@@ -17,7 +17,7 @@
   <meta property="og:image" content="https://visioria.pt/assets/img/Logo200x200.png">
   <meta property="og:site_name" content="Visioria">
   <meta property="og:locale" content="pt_PT">
-        
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/Logo200x200.png" rel="apple-touch-icon">
@@ -421,6 +421,7 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
     <script>
       // Inicializa AOS
@@ -454,15 +455,15 @@
 
             // Apenas a primeira imagem visível
             div.innerHTML = `
-    <div class="portfolio-content h-100">
-      <img src="${p.imagens[0]}" class="img-fluid gallery-thumb" alt="${p.titulo}">
-      <a href="portfolio-details.html">
-      <div class="portfolio-info">
-        <h4>${p.titulo}</h4>
-        <p>${p.descricaoCurta}</p>
-      </div></a>
-    </div>
-  `;
+              <div class="portfolio-content h-100">
+                <img src="${p.imagens[0]}" class="img-fluid gallery-thumb" alt="${p.titulo}">
+                <a href="portfolio-details.html">
+                <div class="portfolio-info">
+                  <h4>${p.titulo}</h4>
+                  <p>${p.descricaoCurta}</p>
+                </div></a>
+              </div>
+            `;
             container.appendChild(div);
 
             // Inicializa a galeria via JS, usando array de imagens
@@ -484,6 +485,12 @@
             itemSelector: '.portfolio-item',
             layoutMode: 'masonry'
           });
+
+          // Garante que o layout só é aplicado depois de as imagens carregarem
+          imagesLoaded(container, () => {
+            iso.layout();
+          });
+
 
           // Filtros
           const filterButtons = document.querySelectorAll('#portfolio-filters li');
@@ -509,10 +516,13 @@
             <span class="description-title">Por que LSF?</span>
             <h2 class="fw-bold">Por que LSF?</h2>
             <p>
-              A equipa da Visioria dedica-se desde os anos 90 à construção civil convencional, contudo, temos vindo a acompanhar novas técnicas e tecnologias do mercado para melhorar a qualidade das nossas construções e otimizar soluções para os clientes.
+              A equipa da Visioria dedica-se desde os anos 90 à construção civil convencional, contudo, temos vindo a
+              acompanhar novas técnicas e tecnologias do mercado para melhorar a qualidade das nossas construções e
+              otimizar soluções para os clientes.
             </p>
             <p>
-              Estudamos há já alguns anos a técnica de Light Steel Framing (LSF) e observamos vantagens que atualmente superam a construção tradicional. Abaixo destacamos alguns pontos principais:
+              Estudamos há já alguns anos a técnica de Light Steel Framing (LSF) e observamos vantagens que atualmente
+              superam a construção tradicional. Abaixo destacamos alguns pontos principais:
             </p>
           </div>
         </div>
@@ -526,9 +536,11 @@
               <div class="card-body">
                 <h5 class="card-title fw-bold">Durabilidade do Aço</h5>
                 <p class="card-text">
-                  O aço proporciona durabilidade elevada com baixa manutenção ao longo dos anos. Documento de referência publicado pelo American Iron and Steel Institute em 1996.
+                  O aço proporciona durabilidade elevada com baixa manutenção ao longo dos anos. Documento de referência
+                  publicado pelo American Iron and Steel Institute em 1996.
                 </p>
-                <a href="http://www.steelframing.org/PDF/sustainability/TN-D001-07.pdf" target="_blank" class="sent-message">Ver Mais</a>
+                <a href="http://www.steelframing.org/PDF/sustainability/TN-D001-07.pdf" target="_blank"
+                  class="sent-message">Ver Mais</a>
               </div>
             </div>
           </div>
@@ -539,9 +551,11 @@
               <div class="card-body">
                 <h5 class="card-title fw-bold">Eficiência Energética</h5>
                 <p class="card-text">
-                  O LSF garante isolamento térmico e acústico superior ao betão e à alvenaria, reduzindo custos com aquecimento e arrefecimento.
+                  O LSF garante isolamento térmico e acústico superior ao betão e à alvenaria, reduzindo custos com
+                  aquecimento e arrefecimento.
                 </p>
-                <a href="https://lightsteel.co.za/benefits-of-light-steel-frame-homes/" target="_blank" class="sent-message">Ver Mais</a>
+                <a href="https://lightsteel.co.za/benefits-of-light-steel-frame-homes/" target="_blank"
+                  class="sent-message">Ver Mais</a>
               </div>
             </div>
           </div>
@@ -557,16 +571,19 @@
               <div class="card-body">
                 <h5 class="card-title fw-bold">Resistência Sísmica</h5>
                 <p class="card-text">
-                  Estruturas LSF pesam até 10x menos que as tradicionais, reduzindo tensões nas fundações e aumentando a segurança em sismos.
+                  Estruturas LSF pesam até 10x menos que as tradicionais, reduzindo tensões nas fundações e aumentando a
+                  segurança em sismos.
                 </p>
                 <a href="https://www.steelframing.org/seismic.html" target="_blank" class="sent-message">Ver Mais</a>
-                
+
                 <!-- Vídeos de Resistência Sísmica -->
                 <div class="ratio ratio-16x9 mt-3">
-                  <iframe src="https://www.youtube.com/embed/-N_Q6Q-3o7M" title="Teste Sísmico LSF 1" allowfullscreen></iframe>
+                  <iframe src="https://www.youtube.com/embed/-N_Q6Q-3o7M" title="Teste Sísmico LSF 1"
+                    allowfullscreen></iframe>
                 </div>
                 <div class="ratio ratio-16x9 mt-3">
-                  <iframe src="https://www.youtube.com/embed/Ts1pxFQ39co" title="Teste Sísmico LSF 2" allowfullscreen></iframe>
+                  <iframe src="https://www.youtube.com/embed/Ts1pxFQ39co" title="Teste Sísmico LSF 2"
+                    allowfullscreen></iframe>
                 </div>
               </div>
             </div>
@@ -578,12 +595,14 @@
               <div class="card-body">
                 <h5 class="card-title fw-bold">Resistência ao Fogo</h5>
                 <p class="card-text">
-                  A lã de rocha aplicada nas paredes promove elevada proteção contra incêndios, funcionando como isolamento e corta-fogo.
+                  A lã de rocha aplicada nas paredes promove elevada proteção contra incêndios, funcionando como
+                  isolamento e corta-fogo.
                 </p>
 
                 <!-- Vídeo Resistência ao Fogo -->
                 <div class="ratio ratio-16x9 mt-3">
-                  <iframe src="https://www.youtube.com/embed/KBtawn7IAnI" title="Teste Resistência ao Fogo" allowfullscreen></iframe>
+                  <iframe src="https://www.youtube.com/embed/KBtawn7IAnI" title="Teste Resistência ao Fogo"
+                    allowfullscreen></iframe>
                 </div>
               </div>
             </div>
@@ -592,9 +611,9 @@
         </div><!-- /Segunda linha -->
 
       </div>
-    </section>    
-    
-     <!-- Estrutura em LSF Section -->
+    </section>
+
+    <!-- Estrutura em LSF Section -->
     <section id="lsf-estrutura" class="py-5 bg-light">
       <div class="container">
 
@@ -609,7 +628,7 @@
         </div>
 
         <div class="row g-4 align-items-center" data-aos="fade-up">
-          
+
           <!-- Imagem -->
           <div class="col-lg-5 text-center">
             <img src="uploads/LSF.png" alt="Estrutura LSF" class="img-fluid rounded shadow">
@@ -621,12 +640,14 @@
             <!-- Nav Tabs -->
             <ul class="nav nav-tabs mb-3" id="lsfTab" role="tablist">
               <li class="nav-item" role="presentation">
-                <button class="nav-link active text-accent" id="exterior-tab" data-bs-toggle="tab" data-bs-target="#exterior" type="button" role="tab">
+                <button class="nav-link active text-accent" id="exterior-tab" data-bs-toggle="tab"
+                  data-bs-target="#exterior" type="button" role="tab">
                   Parede Exterior
                 </button>
               </li>
               <li class="nav-item" role="presentation">
-                <button class="nav-link text-accent" id="interior-tab" data-bs-toggle="tab" data-bs-target="#interior" type="button" role="tab">
+                <button class="nav-link text-accent" id="interior-tab" data-bs-toggle="tab" data-bs-target="#interior"
+                  type="button" role="tab">
                   Parede Interior
                 </button>
               </li>
@@ -699,7 +720,8 @@
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>O que é LSF?</h3>
                 <div class="faq-content">
-                  <p>O Light Steel Frame (LSF) é um sistema construtivo a seco, que utiliza perfis de aço galvanizado para estruturar paredes, lajes e coberturas, substituindo o tijolo e o concreto tradicionais.</p>
+                  <p>O Light Steel Frame (LSF) é um sistema construtivo a seco, que utiliza perfis de aço galvanizado
+                    para estruturar paredes, lajes e coberturas, substituindo o tijolo e o concreto tradicionais.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -709,7 +731,9 @@
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>O LSF é resistente e seguro?</h3>
                 <div class="faq-content">
-                  <p>Sim. O aço galvanizado utilizado é dimensionado conforme normas técnicas, garantindo resistência contra ventos, cargas e sismos. Além disso, o sistema é não-combustível e pode receber tratamento acústico e térmico adequado.</p>
+                  <p>Sim. O aço galvanizado utilizado é dimensionado conforme normas técnicas, garantindo resistência
+                    contra ventos, cargas e sismos. Além disso, o sistema é não-combustível e pode receber tratamento
+                    acústico e térmico adequado.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -719,7 +743,9 @@
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>A construção em LSF é mais cara que a convencional?</h3>
                 <div class="faq-content">
-                  <p>O custo pode variar. Em alguns casos, o investimento inicial é similar ou um pouco maior que a alvenaria, mas o prazo de execução é até 60% menor, reduzindo custos indiretos como mão de obra, tempo de obra e desperdício.</p>
+                  <p>O custo pode variar. Em alguns casos, o investimento inicial é similar ou um pouco maior que a
+                    alvenaria, mas o prazo de execução é até 60% menor, reduzindo custos indiretos como mão de obra,
+                    tempo de obra e desperdício.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -729,7 +755,8 @@
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>Qual a durabilidade de uma construção em LSF?</h3>
                 <div class="faq-content">
-                  <p>Se bem executada, uma obra em LSF pode durar 50 anos ou mais, semelhante às construções em concreto e alvenaria. A galvanização protege o aço contra corrosão.</p>
+                  <p>Se bem executada, uma obra em LSF pode durar 50 anos ou mais, semelhante às construções em concreto
+                    e alvenaria. A galvanização protege o aço contra corrosão.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -739,7 +766,8 @@
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>O LSF é sustentável?</h3>
                 <div class="faq-content">
-                  <p>Sim. É um sistema limpo, com quase nenhum entulho, menor consumo de água (por ser a seco) e materiais 100% recicláveis.</p>
+                  <p>Sim. É um sistema limpo, com quase nenhum entulho, menor consumo de água (por ser a seco) e
+                    materiais 100% recicláveis.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -749,7 +777,8 @@
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>Posso construir casas de mais de um pavimento em LSF?</h3>
                 <div class="faq-content">
-                  <p>Sim. O sistema permite construções de 2 a 3 pavimentos em residências e até maiores em obras comerciais, desde que dimensionadas corretamente.</p>
+                  <p>Sim. O sistema permite construções de 2 a 3 pavimentos em residências e até maiores em obras
+                    comerciais, desde que dimensionadas corretamente.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -759,7 +788,9 @@
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>Como é o isolamento térmico e acústico no LSF?</h3>
                 <div class="faq-content">
-                  <p>O sistema utiliza mantas termoacústicas, lã de rocha, lã de vidro ou EPS, que oferecem bom conforto térmico e acústico. Com o tratamento adequado, pode ter desempenho igual ou superior à alvenaria.</p>
+                  <p>O sistema utiliza mantas termoacústicas, lã de rocha, lã de vidro ou EPS, que oferecem bom conforto
+                    térmico e acústico. Com o tratamento adequado, pode ter desempenho igual ou superior à alvenaria.
+                  </p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -769,7 +800,8 @@
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>Posso instalar ar-condicionado, móveis e revestimentos em LSF?</h3>
                 <div class="faq-content">
-                  <p>Sim. A instalação elétrica e hidráulica é feita dentro das paredes, de forma planejada. Qualquer tipo de revestimento pode ser usado (cerâmica, porcelanato, gesso, pintura, etc.).</p>
+                  <p>Sim. A instalação elétrica e hidráulica é feita dentro das paredes, de forma planejada. Qualquer
+                    tipo de revestimento pode ser usado (cerâmica, porcelanato, gesso, pintura, etc.).</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -779,18 +811,21 @@
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>O LSF precisa de manutenção especial?</h3>
                 <div class="faq-content">
-                  <p>Não. As manutenções são semelhantes às de uma construção tradicional, apenas seguindo boas práticas de vedação e impermeabilização.</p>
+                  <p>Não. As manutenções são semelhantes às de uma construção tradicional, apenas seguindo boas práticas
+                    de vedação e impermeabilização.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
-              
+
               <!-- Tempo de obra -->
               <div class="faq-item" data-aos="fade-up" data-aos-delay="1200">
                 <i class="faq-icon bi bi-question-circle"></i>
                 <h3>O tempo de obra em LSF é menor que na alvenaria?</h3>
                 <div class="faq-content">
-                  <p>Sim. Um dos maiores diferenciais do Light Steel Frame é a rapidez de execução. Enquanto uma construção em alvenaria pode levar de 8 a 12 meses, uma obra equivalente em LSF pode ser concluída em 4 a 6 meses, reduzindo em até 60% o prazo total da obra.</p>
+                  <p>Sim. Um dos maiores diferenciais do Light Steel Frame é a rapidez de execução. Enquanto uma
+                    construção em alvenaria pode levar de 8 a 12 meses, uma obra equivalente em LSF pode ser concluída
+                    em 4 a 6 meses, reduzindo em até 60% o prazo total da obra.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
@@ -814,9 +849,11 @@
         <h2>Contactos</h2>
         <p> Faça o seu pedido de orçamento, será contactado por nós o mais breve possível! </p>
         <br>
-        <p> Utilize o formulário colocado nesta página, preenchendo-o o mais completo possível e, quando se aplicar, anexe ao seu pedido o seu projecto (em anexo) para que o orçamento seja o mais detalhado possível.</p>
+        <p> Utilize o formulário colocado nesta página, preenchendo-o o mais completo possível e, quando se aplicar,
+          anexe ao seu pedido o seu projecto (em anexo) para que o orçamento seja o mais detalhado possível.</p>
         <br>
-        <p>Os nossos técnicos profissionais irão aconselhá-lo acerca das melhores soluções e farão o levantamento dos trabalhos a executar para um orçamento mais detalhado.</p>
+        <p>Os nossos técnicos profissionais irão aconselhá-lo acerca das melhores soluções e farão o levantamento dos
+          trabalhos a executar para um orçamento mais detalhado.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -857,8 +894,9 @@
           </div>
         </div>
 
-   <form action="forms/contact.php" method="post" class="php-email-form" enctype="multipart/form-data" data-aos="fade-up" data-aos-delay="300">
-       <div class="row gy-4">
+        <form action="forms/contact.php" method="post" class="php-email-form" enctype="multipart/form-data"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="row gy-4">
 
             <div class="col-md-6">
               <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
@@ -880,9 +918,9 @@
             </div>
             <div class="col-md-12 text-center">
               <div class="loading">Loading</div>
-              
+
               <div class="sent-message">Sua mensagem foi enviada, a Visioria agradece!</div>
-<div class="error-message"></div>
+              <div class="error-message"></div>
               <button type="submit">Enviar Mensagem</button>
             </div>
 
@@ -902,8 +940,8 @@
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
             <span class="sitename">
-            <img src="assets/img/logo.png" alt=""></span>
-            </a>
+              <img src="assets/img/logo.png" alt=""></span>
+          </a>
           <div class="footer-contact pt-3">
             <p>Gafanha da Nazaré</p>
             <p>Portugal, Aveiro</p>
@@ -922,10 +960,10 @@
           <h4>Useful Links</h4>
           <ul>
             <li><a href="#hero">Home</a></li>
-          <li><a href="#about">A Visioria</a></li>
-          <li><a href="#services">Serviços</a></li>
-          <li><a href="#portfolio">Projetos</a></li>
-          <li><a href="#contact">Contactos</a></li>
+            <li><a href="#about">A Visioria</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#portfolio">Projetos</a></li>
+            <li><a href="#contact">Contactos</a></li>
           </ul>
         </div>
 
@@ -938,7 +976,7 @@
           </ul>
         </div>
 
-        
+
 
       </div>
     </div>
@@ -948,9 +986,11 @@
 
 
     <div class="container copyright text-center mt-4">
-      <p>&copy;<span>Copyright 2018 - <script>document.write(new Date().getFullYear());</script></span> <strong class="px-1 sitename">Visioria</strong> <span>| All Rights Reserved</span></p>
+      <p>&copy;<span>Copyright 2018 -
+          <script>document.write(new Date().getFullYear());</script>
+        </span> <strong class="px-1 sitename">Visioria</strong> <span>| All Rights Reserved</span></p>
       <div class="credits">
-        </div>
+      </div>
     </div>
 
   </footer>
