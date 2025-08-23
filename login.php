@@ -23,7 +23,19 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+    <!--OpenGraph Article-->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dashboard Visioria">
+  <meta property="og:description" content="Acesso Restrito.">
+  <meta property="og:url" content="https://visioria.pt/">
+  <meta property="og:image" content="https://visioria.pt/assets/img/dashboard_og.png">
+  <meta property="og:site_name" content="Visioria">
+  <meta property="og:locale" content="pt_PT">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/Logo200x200.png" rel="apple-touch-icon">
+
   <title>Login - Visioria</title>
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">

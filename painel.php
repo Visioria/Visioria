@@ -108,10 +108,10 @@ if($action === "create" && $_SERVER['REQUEST_METHOD']==="POST"){
   <meta name="Author" content="Visioria">
   <!--OpenGraph Article-->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Visioria Construção Civil - LSF">
+  <meta property="og:title" content="Dashboard Visioria">
   <meta property="og:description" content="Acesso Restrito.">
   <meta property="og:url" content="https://visioria.pt/">
-  <meta property="og:image" content="https://visioria.pt/assets/img/Logo200x200.png">
+  <meta property="og:image" content="https://visioria.pt/assets/img/dashboard_og.png">
   <meta property="og:site_name" content="Visioria">
   <meta property="og:locale" content="pt_PT">
 
