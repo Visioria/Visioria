@@ -1,5 +1,1 @@
-Redirect 301 /servicos https://visioria.pt/#servicos
-Redirect 301 /contactos https://visioria.pt/#contactos
-Redirect 301 /obras https://visioria.pt/#obras
-Redirect 301 /quem-somos https://visioria.pt/#quem-somos
-Redirect 301 /projetos https://visioria.pt/#projetos
+<?php phpinfo(); ?>
