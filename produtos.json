@@ -1,0 +1,147 @@
+[
+    {
+        "titulo": "Obra Rui de Pina, Gafanha da Nazaré",
+        "descricaoCurta": "Aveiro",
+        "descricaoCompleta": "Um dos muitos trabalhos realizados recentemente. Veja as fotografias e a evolução da obra para perceber a intervenção da Visioria neste projecto.",
+        "categoria": "filter-construction",
+        "cliente": "Anônimo",
+        "data": "17 Agosto, 2025",
+        "imagens": [
+            "uploads\/Obra_Rui_de_Pina_(1).jpg",
+            "uploads\/Obra_Rui_de_Pina_(2).jpg",
+            "uploads\/Obra_Rui_de_Pina_(3).jpg",
+            "uploads\/Obra_Rui_de_Pina_(4).jpg",
+            "uploads\/Obra_Rui_de_Pina_(6).jpg",
+            "uploads\/Obra_Rui_de_Pina_(7).jpg",
+            "uploads\/Obra_Rui_de_Pina_(8).jpg",
+            "uploads\/Obra_Rui_de_Pina_(9).jpg",
+            "uploads\/Obra_Rui_de_Pina_(10).jpg",
+            "uploads\/Obra_Rui_de_Pina_(11).jpg",
+            "uploads\/Obra_Rui_de_Pina_(12).jpg",
+            "uploads\/Obra_Rui_de_Pina_(13).jpg",
+            "uploads\/Obra_Rui_de_Pina_(14).jpg",
+            "uploads\/Obra_Rui_de_Pina_(15).jpg",
+            "uploads\/Obra_Rui_de_Pina_(16).jpg",
+            "uploads\/Obra_Rui_de_Pina_(17).jpg",
+            "uploads\/Obra_Rui_de_Pina_(18).jpg"
+        ]
+    },
+    {
+        "titulo": "Rua da Quinta, Gafanha da Encarnação",
+        "descricaoCurta": "Moradia T4, em Aveiro",
+        "descricaoCompleta": "Trabalho de Pintura de fachada",
+        "categoria": "filter-remodeling",
+        "cliente": "Anônimo",
+        "data": "17 Agosto, 2025",
+        "imagens": [
+            "uploads\/Moradia_T4_Rua_da_Quinta_Gafanha_da_Encarnacao.jpg",
+            "uploads\/Moradia_T4_Rua_da_Quinta_Gafanha_da_Encarnacao_(2).jpg"
+        ]
+    },
+    {
+        "titulo": "Rua S. Nicolau, Gafanha da Nazaré",
+        "descricaoCurta": "Moradia T5, em Aveiro",
+        "descricaoCompleta": "Trabalho de Pintura de fachada",
+        "categoria": "filter-remodeling",
+        "cliente": "Anônimo",
+        "data": "2025-08-18",
+        "imagens": [
+            "uploads\/Moradia_T5_Rua_SNicolau_Gafanha_da_Nazare.jpg"
+        ]
+    },
+    {
+        "titulo": "Rua S. Nicolau, Gafanha da Nazaré",
+        "descricaoCurta": "Moradia T4, em Aveiro",
+        "descricaoCompleta": "Trabalho de Pintura de fachada",
+        "categoria": "filter-remodeling",
+        "cliente": "Anônimo",
+        "data": "17 Agosto, 2025",
+        "imagens": [
+            "uploads\/Moradia_T4_Rua_SNicolau_Gafanha_da_Nazare.jpg",
+            "uploads\/Moradia_T4_Rua_SNicolau_Gafanha_da_Nazare_(2).jpg"
+        ]
+    },
+    {
+        "titulo": "Estação Paradela ",
+        "descricaoCurta": "Sever do Vouga",
+        "descricaoCompleta": "Execução Estrutural em Madeira",
+        "categoria": "filter-remodeling",
+        "cliente": "Anônimo",
+        "data": "17 Agosto, 2025",
+        "imagens": [
+            "uploads\/Estacao_Paralela.jpg",
+            "uploads\/Estacao_Paralela_(2).jpg",
+            "uploads\/Estacao_Paralela_(3).jpg"
+        ]
+    },
+    {
+        "titulo": "Pintura de Fachada ",
+        "descricaoCurta": "Aveiro",
+        "descricaoCompleta": "Trabalho de Pintura de fachada",
+        "categoria": "filter-remodeling",
+        "cliente": "Anônimo",
+        "data": "17 Agosto, 2025",
+        "imagens": [
+            "uploads\/Pintura_Fachada.jpg",
+            "uploads\/Pintura_Fachada_(2).jpg",
+            "uploads\/Pintura_Fachada_(3).jpg",
+            "uploads\/Pintura_Fachada_(4).jpg"
+        ]
+    },
+    {
+        "titulo": "Casa do Sal",
+        "descricaoCurta": "Aveiro",
+        "descricaoCompleta": "Construção",
+        "categoria": "filter-construction",
+        "cliente": "Anônimo",
+        "data": "17 Agosto, 2025",
+        "imagens": [
+            "uploads\/Casa_do_Sal.jpg",
+            "uploads\/Casa_do_Sal_(2).jpg",
+            "uploads\/Casa_do_Sal_(3).jpg",
+            "uploads\/Casa_do_Sal_(4).jpg"
+        ]
+    },
+    {
+        "titulo": "Projeto Weros",
+        "descricaoCurta": "Aveiro",
+        "descricaoCompleta": "Projeto",
+        "categoria": "filter-projects",
+        "cliente": "Anônimo",
+        "data": "17 Agosto, 2025",
+        "imagens": [
+            "uploads\/Projecto_Weros.jpg",
+            "uploads\/Projecto_Weros_(2).jpg",
+            "uploads\/Projecto_Weros_(3).jpg"
+        ]
+    },
+    {
+        "titulo": "Projeto RDP",
+        "descricaoCurta": "Aveiro",
+        "descricaoCompleta": "Projeto",
+        "categoria": "filter-projects",
+        "cliente": "Anônimo",
+        "data": "17 Agosto, 2025",
+        "imagens": [
+            "uploads\/Projeto_RDP.jpg",
+            "uploads\/Projeto_RDP_(2).jpg",
+            "uploads\/Projeto_RDP_(3).jpg",
+            "uploads\/Projeto_RDP_(4).jpg",
+            "uploads\/Projeto_RDP_(5).jpg"
+        ]
+    },
+    {
+        "titulo": "Projeto Casa do Sal",
+        "descricaoCurta": "Aveiro",
+        "descricaoCompleta": "Construção",
+        "categoria": "filter-construction",
+        "cliente": "Anônimo",
+        "data": "17 Agosto, 2025",
+        "imagens": [
+            "uploads\/Projeto_Casa_do_Sal.png",
+            "uploads\/Projeto_Casa_do_Sal_(2).png",
+            "uploads\/Projeto_Casa_do_Sal_(3).png",
+            "uploads\/Projeto_Casa_do_Sal_(4).png"
+        ]
+    }
+]
