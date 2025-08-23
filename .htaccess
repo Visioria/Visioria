@@ -1,1 +1,4 @@
-<?php phpinfo(); ?>
+RewriteEngine On
+RewriteRule ^servicos/?$ /servicos.html [R=301,L]
+RewriteRule ^contactos/?$ /contactos.html [R=301,L]
+RewriteRule ^quem-somos/?$ quem-somos.html [R=301,L]
