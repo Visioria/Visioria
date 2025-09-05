@@ -133,8 +133,8 @@
     {
         "titulo": "Projeto Casa do Sal",
         "descricaoCurta": "Aveiro",
-        "descricaoCompleta": "Construção",
-        "categoria": "filter-construction",
+        "descricaoCompleta": "Projeto",
+        "categoria": "filter-projects",
         "cliente": "Anônimo",
         "data": "17 Agosto, 2025",
         "imagens": [
