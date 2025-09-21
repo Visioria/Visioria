@@ -58,7 +58,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['logado'] !== true){
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2  bg-white my-2" id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand px-4 py-3 m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+      <a class="navbar-brand px-4 py-3 m-0" href="https://visioria.pt/" target="_blank">
         <img src="../assets/img/logo.png" class="navbar-brand-img" width="75" height="25" alt="main_logo">
         <span class="ms-1 text-sm text-dark">Gerenciador</span>
       </a>
@@ -494,7 +494,6 @@ if(!isset($_SESSION['logado']) || $_SESSION['logado'] !== true){
             <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
           </div>
         </div>
-        <hr class="horizontal dark my-sm-4">
         
       </div>
     </div>
