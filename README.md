@@ -52,19 +52,19 @@ http://localhost/project/pages/index.php
 ## 📸 Prints de Tela
 
 ### 🔹 Página Inicial (Index)  
-![Print Index](asstes/img/index.jpg)  
+![Print Index](assets/img/index.jpg)  
 
 ### 🔹 Dashboard  
-![Print Dashboard](asstes/img/dashboard.jpg)  
+![Print Dashboard](assets/img/dashboard.jpg)  
 
 ### 🔹 Upload  
-![Print Upload](asstes/img/upload.jpg)  
+![Print Upload](assets/img/upload.jpg)  
 
 ### 🔹 Upload  
-![Print Upload](asstes/img/upload_fb.jpg)  
+![Print Upload](assets/img/upload_fb.jpg)  
 
 ### 🔹 Tabelas  
-![Print Tables](asstes/img/tables.jpg)  
+![Print Tables](assets/img/tables.jpg)  
 
 
 ---
