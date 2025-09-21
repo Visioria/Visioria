@@ -433,12 +433,66 @@
     <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
-    <script>
-      // Inicializa AOS
-      AOS.init({
-        duration: 800,
-        easing: 'slide',
-        once: true
+<script>
+  // Inicializa AOS
+  AOS.init({
+    duration: 800,
+    easing: 'slide',
+    once: true
+  });
+
+  // Inicializa Glightbox
+  const lightbox = GLightbox({ selector: '.glightbox' });
+
+  // Caminho para o JSON
+  const jsonPath = 'dashboard/pages/produtos.json?v=' + new Date().getTime(); // evita cache
+  const container = document.getElementById('produtos-container');
+
+  // Prefixo que só o index precisa usar
+  const prefixoIndex = "dashboard/pages/";
+
+  fetch(jsonPath)
+    .then(res => res.json())
+    .then(produtos => {
+      if (produtos.length === 0) {
+        container.innerHTML = '<p>Nenhum produto cadastrado ainda.</p>';
+        return;
+      }
+
+      produtos.forEach((p) => {
+        const div = document.createElement('div');
+        div.className = `col-lg-4 col-md-6 portfolio-item isotope-item ${p.categoria}`;
+        div.setAttribute('data-aos', 'fade-up');
+        div.setAttribute('data-aos-delay', '200');
+
+        // Corrige a primeira imagem para o index
+        const primeiraImg = p.imagens.length > 0 ? prefixoIndex + p.imagens[0].url : "placeholder.jpg";
+
+        div.innerHTML = `
+          <div class="portfolio-content h-100">
+            <img src="${primeiraImg}" class="img-fluid gallery-thumb" alt="${p.titulo}">
+            <a href="portfolio-details.html">
+              <div class="portfolio-info">
+                <h4>${p.titulo}</h4>
+                <p>${p.descricaoCurta}</p>
+              </div>              
+              <p style="margin-left:5%">Ver Detalhes</p>                           
+            </a>
+          </div>
+        `;
+        container.appendChild(div);
+
+        // Inicializa a galeria com prefixo no index
+        div.querySelector('.gallery-thumb').addEventListener('click', () => {
+          GLightbox({
+            elements: p.imagens.map(img => ({
+              href: prefixoIndex + img.url
+            })),
+            touchNavigation: true,
+            loop: true,
+            closeButton: true,
+          }).open();
+        });
       });
 
       // Inicializa Glightbox
@@ -641,7 +695,7 @@
 
           <!-- Imagem -->
           <div class="col-lg-5 text-center">
-            <img src="uploads/LSF.png" alt="Estrutura LSF" class="img-fluid rounded shadow">
+            <img src="assets/img/LSF.png" alt="Estrutura LSF" class="img-fluid rounded shadow">
           </div>
 
           <!-- Abas com conteúdo -->

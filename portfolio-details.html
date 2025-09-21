@@ -60,11 +60,11 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">A Visioria</a></li>
-          <li><a href="#services">Serviços</a></li>
-          <li><a href="#portfolio">Projetos</a></li>
-          <li><a href="#contact">Contactos</a></li>
+          <li><a href="index.html#hero" class="active">Home</a></li>
+          <li><a href="index.html#about">A Visioria</a></li>
+          <li><a href="index.html#services">Serviços</a></li>
+          <li><a href="index.html#portfolio">Projetos</a></li>
+          <li><a href="index.html#contact">Contactos</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -93,63 +93,77 @@
       </div>
     </section>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        fetch("produtos.json")
-          .then(res => res.json())
-          .then(produtos => {
-            const container = document.querySelector("#produtos-container");
-            container.innerHTML = "";
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Caminho atualizado com quebra de cache automática
+    fetch("dashboard/pages/produtos.json?v=" + new Date().getTime())
+      .then(res => res.json())
+      .then(produtos => {
+        const container = document.querySelector("#produtos-container");
+        container.innerHTML = "";
 
-            produtos.forEach(produto => {
-              const produtoHTML = document.createElement("div");
-              produtoHTML.className = "row gy-4 mb-5";
+        // Prefixo necessário quando acessamos de fora de dashboard/pages
+        const prefixoIndex = "dashboard/pages/";
 
-              produtoHTML.innerHTML = `
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-                ${produto.imagens.map(img => `<div class="swiper-slide"><img src="${img}" alt="${produto.titulo}"></div>`).join("")}
+        produtos.forEach(produto => {
+          const produtoHTML = document.createElement("div");
+          produtoHTML.className = "row gy-4 mb-5";
+
+          produtoHTML.innerHTML = `
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                  ${produto.imagens
+                    .map(img => 
+                      `<div class="swiper-slide">
+                         <img src="${prefixoIndex + img.url}" alt="${produto.titulo}">
+                       </div>`
+                    )
+                    .join("")}
+                </div>
+                <div class="swiper-pagination"></div>
               </div>
-              <div class="swiper-pagination"></div>
             </div>
-          </div>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>${produto.titulo}</h3>
-              <ul>
-                <li><strong>Client</strong>: ${produto.cliente || "—"}</li>
-                <li><strong>Project date</strong>: ${produto.data || "—"}</li>
-              </ul>
+            <div class="col-lg-4">
+              <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+                <h3>${produto.titulo}</h3>
+                <ul>
+                  <li><strong>Cliente</strong>: ${produto.cliente || "—"}</li>
+                  <li><strong>Data</strong>: ${produto.data || "—"}</li>
+                </ul>
+              </div>
+              <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                <p>${produto.descricaoCompleta || produto.descricaoCurta || "Sem descrição."}</p>
+              </div>
             </div>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              
-              <p>${produto.descricaoCompleta || produto.Curta || "Sem descrição."}</p>
-            </div>
-          </div>
-        `;
+          `;
 
-              container.appendChild(produtoHTML);
+          container.appendChild(produtoHTML);
 
-              // Inicializa o Swiper do produto
-              const sliderEl = produtoHTML.querySelector(".portfolio-details-slider");
-              new Swiper(sliderEl, {
-                loop: true,
-                speed: 600,
-                autoplay: { delay: 5000 },
-                slidesPerView: "auto",
-                pagination: { el: sliderEl.querySelector(".swiper-pagination"), type: "bullets", clickable: true }
-              });
-            });
+          // Inicializa o Swiper do produto
+          const sliderEl = produtoHTML.querySelector(".portfolio-details-slider");
+          new Swiper(sliderEl, {
+            loop: true,
+            speed: 600,
+            autoplay: { delay: 5000 },
+            slidesPerView: "auto",
+            pagination: {
+              el: sliderEl.querySelector(".swiper-pagination"),
+              type: "bullets",
+              clickable: true
+            }
+          });
+        });
 
-            // Inicializa AOS
-            AOS.init();
-          })
-          .catch(err => console.error("Erro ao carregar produtos:", err));
-      });
+        // Inicializa AOS
+        AOS.init();
+      })
+      .catch(err => console.error("Erro ao carregar produtos:", err));
+  });
+</script>
 
-    </script>
+
 
   </main>
 

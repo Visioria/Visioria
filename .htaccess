@@ -1,7 +1,8 @@
 RewriteEngine On
-RewriteRule ^serviços/?$ /servicos.html [R=301,L]
+RewriteRule ^servicos/?$ /servicos.html [R=301,L]
 RewriteRule ^contactos/?$ /contactos.html [R=301,L]
 RewriteRule ^quem-somos/?$ /quem-somos.html [R=301,L]
 RewriteRule ^projectos/?$ /portfolio-details.html [R=301,L]
 RewriteRule ^obras-realizadas/?$ /projectos.html [R=301,L]
 RewriteRule ^conheca-a-estrutura/?$ /lsf-estrutura.html [R=301,L]
+RewriteRule ^peca-o-seu-orcamento/?$ /contactos.html [R=301,L]
