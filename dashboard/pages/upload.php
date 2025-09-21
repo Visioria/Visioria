@@ -200,7 +200,7 @@ if (!empty($imagensUrls)) {
 
 
 // Monta mensagem final
-$mensagemFinal = "<strong>Facebook Post:</strong>";
+$mensagemFinal = "<strong>Facebook:</strong>";
 
 if ($fbMensagem) {
     $mensagemFinal .= "<br>" . $fbMensagem;

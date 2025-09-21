@@ -495,80 +495,32 @@
         });
       });
 
-      // Inicializa Glightbox
-      const lightbox = GLightbox({ selector: '.glightbox' });
+      // Inicializa Isotope
+      const iso = new Isotope(container, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'masonry'
+      });
 
-      // Carregar JSON
-      const jsonPath = 'produtos.json'; // Substituir pelo teu caminho real do JSON
-      const container = document.getElementById('produtos-container');
+      // Recalcula layout depois de carregar imagens
+      imagesLoaded(container, () => {
+        iso.layout();
+      });
 
-      fetch(jsonPath)
-        .then(res => res.json())
-        .then(produtos => {
-          if (produtos.length === 0) {
-            container.innerHTML = '<p>Nenhum produto cadastrado ainda.</p>';
-            return;
-          }
-
-          produtos.forEach((p, index) => {
-            const div = document.createElement('div');
-            div.className = `col-lg-4 col-md-6 portfolio-item isotope-item ${p.categoria}`;
-            div.setAttribute('data-aos', 'fade-up');
-            div.setAttribute('data-aos-delay', '200');
-
-
-            // Apenas a primeira imagem visível
-            div.innerHTML = `
-              <div class="portfolio-content h-100">
-                <img src="${p.imagens[0]}" class="img-fluid gallery-thumb" alt="${p.titulo}">
-                <a href="portfolio-details.html">
-                <div class="portfolio-info">
-                  <h4>${p.titulo}</h4>
-                  <p>${p.descricaoCurta}</p>
-                </div></a>
-              </div>
-            `;
-            container.appendChild(div);
-
-            // Inicializa a galeria via JS, usando array de imagens
-            div.querySelector('.gallery-thumb').addEventListener('click', () => {
-              GLightbox({
-                elements: p.imagens.map(img => ({ href: img })),
-                touchNavigation: true,    // permite navegação por swipe
-                loop: true,               // navegação contínua
-                closeButton: true,        // botão de fechar
-              }).open();
-
-            });
-          });
+      // Filtros
+      const filterButtons = document.querySelectorAll('#portfolio-filters li');
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => b.classList.remove('filter-active'));
+          btn.classList.add('filter-active');
+          const filterValue = btn.getAttribute('data-filter');
+          iso.arrange({ filter: filterValue });
+        });
+      });
+    })
+    .catch(err => console.error('Erro ao carregar produtos:', err));
+</script>
 
 
-
-          // Inicializa Isotope
-          const iso = new Isotope(container, {
-            itemSelector: '.portfolio-item',
-            layoutMode: 'masonry'
-          });
-
-          // Garante que o layout só é aplicado depois de as imagens carregarem
-          imagesLoaded(container, () => {
-            iso.layout();
-          });
-
-
-          // Filtros
-          const filterButtons = document.querySelectorAll('#portfolio-filters li');
-          filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-              filterButtons.forEach(b => b.classList.remove('filter-active'));
-              btn.classList.add('filter-active');
-              const filterValue = btn.getAttribute('data-filter');
-              iso.arrange({ filter: filterValue });
-            });
-          });
-        })
-        .catch(err => console.error('Erro ao carregar produtos:', err));
-    </script>
 
     <!-- LSF Section -->
     <section id="lsf-section" class="py-5">

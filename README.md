@@ -52,15 +52,20 @@ http://localhost/project/pages/index.php
 ## 📸 Prints de Tela
 
 ### 🔹 Página Inicial (Index)  
-![Print Index](prints/index.png)  
+![Print Index](asstes/img/index.jpg)  
 
 ### 🔹 Dashboard  
-![Print Dashboard](prints/dashboard.png)  
+![Print Dashboard](asstes/img/dashboard.jpg)  
 
-### 🔹 Upload + Tabelas  
-![Print Upload e Tables](prints/upload-tables.png)  
+### 🔹 Upload  
+![Print Upload](asstes/img/upload.jpg)  
 
-> 🖼️ Coloque as imagens na pasta `prints/` e elas aparecerão automaticamente aqui.  
+### 🔹 Upload  
+![Print Upload](asstes/img/upload_fb.jpg)  
+
+### 🔹 Tabelas  
+![Print Tables](asstes/img/tables.jpg)  
+
 
 ---
 
