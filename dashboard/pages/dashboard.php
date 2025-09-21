@@ -600,7 +600,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['logado'] !== true){
       data: {
         labels: ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
         datasets: [{
-          label: "Sales",
+          label: "Views",
           tension: 0,
           borderWidth: 2,
           pointRadius: 3,
@@ -683,7 +683,7 @@ if(!isset($_SESSION['logado']) || $_SESSION['logado'] !== true){
       data: {
         labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         datasets: [{
-          label: "Tasks",
+          label: "Views",
           tension: 0,
           borderWidth: 2,
           pointRadius: 3,
@@ -943,42 +943,42 @@ if(!isset($_SESSION['logado']) || $_SESSION['logado'] !== true){
       };
 
       // --- helpers para formatar lastUpdate ---
-function parseDate(val) {
-  if (!val) return null;
-  const s = String(val).trim();
+    function parseDate(val) {
+      if (!val) return null;
+      const s = String(val).trim();
 
-  // epoch em segundos ou milissegundos
-  if (/^\d+$/.test(s)) {
-    const n = Number(s);
-    return s.length <= 10 ? new Date(n * 1000) : new Date(n);
-  }
+      // epoch em segundos ou milissegundos
+      if (/^\d+$/.test(s)) {
+        const n = Number(s);
+        return s.length <= 10 ? new Date(n * 1000) : new Date(n);
+      }
 
-  // yyyy-mm-dd hh:mm:ss
-  let m = s.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?$/);
-  if (m) return new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +(m[6] || 0));
+      // yyyy-mm-dd hh:mm:ss
+      let m = s.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?$/);
+      if (m) return new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +(m[6] || 0));
 
-  // dd/mm/yyyy hh:mm:ss
-  m = s.match(/^(\d{2})\/(\d{2})\/(\d{4})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?$/);
-  if (m) return new Date(+m[3], +m[2] - 1, +m[1], +(m[4] || 0), +(m[5] || 0), +(m[6] || 0));
+      // dd/mm/yyyy hh:mm:ss
+      m = s.match(/^(\d{2})\/(\d{2})\/(\d{4})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?$/);
+      if (m) return new Date(+m[3], +m[2] - 1, +m[1], +(m[4] || 0), +(m[5] || 0), +(m[6] || 0));
 
-  const d = new Date(s);
-  return isNaN(d) ? null : d;
-}
+      const d = new Date(s);
+      return isNaN(d) ? null : d;
+    }
 
-const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
+    const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
 
-function formatLastUpdate(val) {
-  const d = parseDate(val);
-  if (!d) return val || '--';
-  const formatted = d.toLocaleString('pt-PT', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
-  });
-  return capitalize(formatted);
-}
+    function formatLastUpdate(val) {
+      const d = parseDate(val);
+      if (!d) return val || '--';
+      const formatted = d.toLocaleString('pt-PT', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      return capitalize(formatted);
+    }
 
       // mostra erro visível (cria elemento se não existir)
       function showError(msg) {
